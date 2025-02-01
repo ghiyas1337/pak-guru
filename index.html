@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input URL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Input URL</h1>
+    <input type="text" id="urlInput" placeholder="Masukkan URL" />
+    <button id="submitButton">Submit</button>
+
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('submitButton').addEventListener('click', function() {
+            const url = document.getElementById('urlInput').value;
+            const resultDiv = document.getElementById('result');
+
+            if (url) {
+                resultDiv.innerHTML = `<a href="${url}" target="_blank">${url}</a> | user: password:`;
+                resultDiv.style.display = 'block';
+            } else {
+                resultDiv.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
